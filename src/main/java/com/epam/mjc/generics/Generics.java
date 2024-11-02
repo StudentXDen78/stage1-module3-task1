@@ -1,26 +1,27 @@
 package com.epam.mjc.generics;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Generics {
 
     //TODO: Refactor Method-1
-    public List boxingMethod(String name) {
-        List firstList = new ArrayList<>();
+    public List<List<String>> boxingMethod(String name) {
+        List<String> firstList = new ArrayList<>();
         firstList.add(name);
-        List secondList = new ArrayList<>();
+        List<List<String>> secondList = new ArrayList<>();
         secondList.add(firstList);
         return secondList;
     }
 
     //TODO: Refactor Method-2
-    public Object genericMethod(Object data) {
-        return data;
+    public <T> T genericMethod(Object data) {
+        return (T) data;
     }
 
     //TODO: Refactor Method-3
-    public void cloneMethod(List consumer, List producer) {
+    public void cloneMethod(List<Number> consumer, List<Integer> producer) {
         consumer.addAll(producer);
     }
 
